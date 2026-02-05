@@ -6,7 +6,8 @@ import json
 # ================= 配置区 (请修改以下信息) =================
 # 1. 飞书机器人的 Webhook 地址
 # 如何获取：飞书群 -> 设置 -> 群机器人 -> 添加 -> 自定义机器人 -> 复制 Webhook 地址
-FEISHU_WEBHOOK_URL = "https://open.feishu.cn/open-apis/bot/v2/hook/09da27da-8f4d-42c3-94c2-0a3c8aea1677"
+import os
+FEISHU_WEBHOOK_URL = os.environ.get("FEISHU_WEBHOOK", "你的默认备用地址")
 
 # 2. 搜索关键词
 SEARCH_KEYWORD = "Cancer Immunotherapy"
@@ -174,3 +175,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
